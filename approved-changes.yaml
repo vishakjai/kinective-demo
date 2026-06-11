@@ -1,0 +1,22 @@
+# Approved changes — the rationalization register.
+#
+# Client-agreed intentional changes for the BranchDesk modernization. A
+# behavioral difference between the legacy source and the migrated target that
+# MATCHES an entry here is recorded as APPROVED (intentional) — never as a
+# regression. Nothing else may downgrade a regression to approved.
+version: 1
+
+approved_changes:
+  - id: AC-1
+    title: Emailed receipt option (target-only enhancement)
+    description: >
+      The modernized UI adds an option to email a receipt after a transaction
+      completes, in addition to the existing printed receipt. The legacy Serve
+      and Kiosk faces only printed receipts. This is a requested enhancement,
+      not a defect.
+    risk_class: cosmetic
+    applies_to_faces: [serve, kiosk]
+    expected_effect: >
+      Target traces may include an additional receipt-channel decision
+      (channel = email) that has no counterpart in the source traces. The
+      behavioral-equivalence gate must classify this divergence as APPROVED.
