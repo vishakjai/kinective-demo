@@ -1,0 +1,8 @@
+{
+  "scenario": "05-after-hours-audit",
+  "config": { "deviceMode": "AFTER_HOURS", "ofacReviewThreshold": "0.85", "holdThreshold": "5000.00" },
+  "steps": [
+    { "face": "SERVE", "action": "login", "associateId": "A-1", "name": "Pat Teller", "role": "TELLER", "method": "iris" },
+    { "face": "SERVE", "action": "auditCashInventory" }
+  ]
+}

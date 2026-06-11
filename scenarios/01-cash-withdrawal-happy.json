@@ -1,0 +1,9 @@
+{
+  "scenario": "01-cash-withdrawal-happy",
+  "config": { "deviceMode": "KIOSK", "ofacReviewThreshold": "0.85", "holdThreshold": "5000.00" },
+  "steps": [
+    { "face": "KIOSK", "action": "identifyConsumer", "consumerId": "C-1001", "method": "barcode" },
+    { "face": "KIOSK", "action": "startWithdrawal", "txnId": "T-1", "amount": "200.00", "account": "0001-CHK" },
+    { "face": "KIOSK", "action": "postWithdrawal", "txnId": "T-1", "amount": "200.00", "account": "0001-CHK" }
+  ]
+}

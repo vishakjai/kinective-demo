@@ -1,0 +1,10 @@
+{
+  "scenario": "04-queued-batch",
+  "config": { "deviceMode": "TELLER", "ofacReviewThreshold": "0.85", "holdThreshold": "5000.00" },
+  "steps": [
+    { "face": "SERVE", "action": "login", "associateId": "A-1", "name": "Pat Teller", "role": "TELLER", "method": "badge" },
+    { "face": "SERVE", "action": "enqueue", "txnId": "T-A" },
+    { "face": "SERVE", "action": "enqueue", "txnId": "T-B" },
+    { "face": "SERVE", "action": "navigateBack" }
+  ]
+}
