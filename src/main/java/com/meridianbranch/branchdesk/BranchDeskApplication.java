@@ -23,8 +23,7 @@ public class BranchDeskApplication extends WebApplication {
         // Stateful, server-rendered: rely on Wicket page versioning (page maps).
         getMarkupSettings().setStripWicketTags(true);
 
-        // Page mounts are added per-face as the workflows land:
-        //   mountPage("/serve", com.meridianbranch.branchdesk.teller.ServeConsolePage.class);
-        //   mountPage("/kiosk", com.meridianbranch.branchdesk.kiosk.KioskHomePage.class);
+        mountPage("/serve", com.meridianbranch.branchdesk.teller.ServeConsolePage.class);
+        mountPage("/kiosk", com.meridianbranch.branchdesk.kiosk.KioskHomePage.class);
     }
 }

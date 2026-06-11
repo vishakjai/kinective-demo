@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Serve — Teller Console</title>
+</head>
+<body>
+    <h1><span wicket:id="appName">BranchDesk — Serve</span></h1>
+
+    <h2>Cashier's check — payee screening</h2>
+    <form wicket:id="screenForm">
+        <label>Payee
+            <input type="text" wicket:id="payee"/>
+        </label>
+        <button type="submit">Screen payee</button>
+    </form>
+
+    <p><strong>Status:</strong> <span wicket:id="reviewStatus"></span></p>
+
+    <p><a href="../">Home</a></p>
+</body>
+</html>
