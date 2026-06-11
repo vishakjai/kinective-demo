@@ -5,18 +5,29 @@
     <title>Serve — Teller Console</title>
 </head>
 <body>
-    <h1><span wicket:id="appName">BranchDesk — Serve</span></h1>
-
-    <h2>Cashier's check — payee screening</h2>
-    <form wicket:id="screenForm">
-        <label>Payee
-            <input type="text" wicket:id="payee"/>
-        </label>
-        <button type="submit">Screen payee</button>
-    </form>
-
-    <p><strong>Status:</strong> <span wicket:id="reviewStatus"></span></p>
-
-    <p><a href="../">Home</a></p>
+<div class="bd-app">
+    <div class="bd-header">
+        <div class="bd-brand">BranchDesk <span class="bd-sub">Serve — Teller Console</span></div>
+        <div class="bd-session">Teller: <b>P. TELLER</b> &nbsp;|&nbsp; Branch 0042<br/>Mode: TELLER &nbsp;|&nbsp; Drawer balanced</div>
+    </div>
+    <div class="bd-nav"><a href="../">Home</a> &raquo; Serve Console &raquo; Cashier's Check</div>
+    <div class="bd-content">
+        <div class="bd-panel">
+            <div class="bd-panel-title">Cashier's Check — Payee Screening</div>
+            <div class="bd-panel-body">
+                <form wicket:id="screenForm">
+                    <div class="bd-field">
+                        <label for="payee">Payee name</label>
+                        <input type="text" id="payee" wicket:id="payee"/>
+                        <div class="bd-hint">OFAC screening runs on submit; a match at or above the branch threshold requires supervisor review.</div>
+                    </div>
+                    <button type="submit">Screen payee</button>
+                </form>
+                <div wicket:id="reviewStatus" class="bd-status">Enter a payee and screen.</div>
+            </div>
+        </div>
+    </div>
+    <div class="bd-footer">BranchDesk 4.2.1 &nbsp;|&nbsp; &copy; 2008 Meridian Branch Systems, Inc. &nbsp;|&nbsp; Session 0x8F3A12</div>
+</div>
 </body>
 </html>

@@ -1,13 +1,12 @@
 package com.meridianbranch.branchdesk;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 
 /**
- * Landing page — the face selector. A real teller/customer is routed to the
- * Serve or Kiosk shell from here. Kept deliberately plain (scaffold phase).
+ * Landing page — the face selector. A teller or customer is routed to the Serve
+ * or Kiosk shell from here.
  */
-public class HomePage extends WebPage {
+public class HomePage extends BasePage {
     private static final long serialVersionUID = 1L;
 
     public HomePage() {

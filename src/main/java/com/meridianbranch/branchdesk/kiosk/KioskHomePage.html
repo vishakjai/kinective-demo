@@ -5,18 +5,29 @@
     <title>Kiosk — Customer Terminal</title>
 </head>
 <body>
-    <h1><span wicket:id="appName">BranchDesk — Kiosk</span></h1>
-
-    <h2>Cash withdrawal</h2>
-    <form wicket:id="withdrawForm">
-        <label>Amount
-            <input type="text" wicket:id="amount"/>
-        </label>
-        <button type="submit">Withdraw</button>
-    </form>
-
-    <p><span wicket:id="result"></span></p>
-
-    <p><a href="../">Home</a></p>
+<div class="bd-app">
+    <div class="bd-header">
+        <div class="bd-brand">BranchDesk <span class="bd-sub">Kiosk — Customer Terminal</span></div>
+        <div class="bd-session">Branch 0042 — Main Street<br/>Mode: KIOSK &nbsp;|&nbsp; Recycler online</div>
+    </div>
+    <div class="bd-nav"><a href="../">Home</a> &raquo; Kiosk &raquo; Cash Withdrawal</div>
+    <div class="bd-content">
+        <div class="bd-panel">
+            <div class="bd-panel-title">Cash Withdrawal</div>
+            <div class="bd-panel-body">
+                <form wicket:id="withdrawForm">
+                    <div class="bd-field">
+                        <label for="amount">Amount to withdraw</label>
+                        <input type="text" id="amount" wicket:id="amount"/>
+                        <div class="bd-hint">From checking account ending 0001-CHK.</div>
+                    </div>
+                    <button type="submit">Withdraw</button>
+                </form>
+                <div wicket:id="result" class="bd-status">Enter an amount to withdraw.</div>
+            </div>
+        </div>
+    </div>
+    <div class="bd-footer">BranchDesk 4.2.1 &nbsp;|&nbsp; &copy; 2008 Meridian Branch Systems, Inc. &nbsp;|&nbsp; Session 0x8F3A12</div>
+</div>
 </body>
 </html>

@@ -45,6 +45,6 @@ class UiPagesTest {
         form.submit();
 
         // 1200.00 starting available − 100.00 withdrawn, reconciled to ledger.
-        tester.assertLabel("result", "Available balance: 1100.00");
+        tester.assertLabel("result", "Dispensed 100.00. Available balance: 1100.00");
     }
 }

@@ -5,11 +5,27 @@
     <title>BranchDesk</title>
 </head>
 <body>
-    <h1><span wicket:id="appName">BranchDesk</span></h1>
-    <p>by <span wicket:id="vendor">Meridian Branch Systems</span></p>
-    <ul>
-        <li><a href="serve">Serve — teller console</a></li>
-        <li><a href="kiosk">Kiosk — customer terminal</a></li>
-    </ul>
+<div class="bd-app">
+    <div class="bd-header">
+        <div class="bd-brand"><span wicket:id="appName">BranchDesk</span>
+            <span class="bd-sub" wicket:id="vendor">Meridian Branch Systems</span></div>
+        <div class="bd-session">Branch <b>0042</b> — Main Street<br/>Workstation WS-07 &nbsp;|&nbsp; v4.2.1</div>
+    </div>
+    <div class="bd-nav">Home</div>
+    <div class="bd-content">
+        <div class="bd-panel">
+            <div class="bd-panel-title">Select workstation mode</div>
+            <div class="bd-panel-body">
+                <ul class="bd-faces">
+                    <li><a href="serve">Serve — Teller Console
+                        <span class="bd-face-desc">Teller-operated transactions, screening, and overrides.</span></a></li>
+                    <li><a href="kiosk">Kiosk — Customer Terminal
+                        <span class="bd-face-desc">Customer self-service deposits and withdrawals.</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bd-footer">BranchDesk 4.2.1 &nbsp;|&nbsp; &copy; 2008 Meridian Branch Systems, Inc. &nbsp;|&nbsp; Session 0x8F3A12</div>
+</div>
 </body>
 </html>

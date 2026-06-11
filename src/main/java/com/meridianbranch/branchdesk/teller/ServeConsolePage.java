@@ -1,5 +1,6 @@
 package com.meridianbranch.branchdesk.teller;
 
+import com.meridianbranch.branchdesk.BasePage;
 import com.meridianbranch.branchdesk.config.BranchConfig;
 import com.meridianbranch.branchdesk.service.MockBranchOperationService;
 import com.meridianbranch.branchdesk.trace.Face;
@@ -8,7 +9,7 @@ import com.meridianbranch.branchdesk.trace.TraceRecord;
 import com.meridianbranch.branchdesk.workflow.BranchSession;
 import com.meridianbranch.branchdesk.workflow.CashiersCheckWorkflow;
 import com.meridianbranch.branchdesk.workflow.ReviewHandler;
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
@@ -19,15 +20,14 @@ import org.apache.wicket.model.Model;
  * Serve — the teller console. Screens a cashier's-check payee and surfaces the
  * supervisor-review state, including the review reason (the teller-facing view).
  */
-public class ServeConsolePage extends WebPage {
+public class ServeConsolePage extends BasePage {
     private static final long serialVersionUID = 1L;
 
     private final IModel<String> payee = Model.of("");
-    private final IModel<String> reviewStatus = Model.of("");
+    private final IModel<String> reviewStatus = Model.of("Enter a payee and screen.");
+    private final IModel<String> statusClass = Model.of("bd-status");
 
     public ServeConsolePage() {
-        add(new Label("appName", "BranchDesk — Serve"));
-
         Form<Void> form = new Form<Void>("screenForm") {
             private static final long serialVersionUID = 1L;
             @Override
@@ -38,7 +38,10 @@ public class ServeConsolePage extends WebPage {
         form.add(new TextField<>("payee", payee));
         add(form);
 
-        add(new Label("reviewStatus", reviewStatus));
+        Label status = new Label("reviewStatus", reviewStatus);
+        status.add(AttributeModifier.replace("class", statusClass));
+        status.setOutputMarkupId(true);
+        add(status);
     }
 
     private void screen(String payeeName) {
@@ -52,10 +55,11 @@ public class ServeConsolePage extends WebPage {
         cashiers.selectPayee(payeeName);
 
         if (cashiers.isReviewRequired()) {
-            String reason = lastReviewReason(trace);
-            reviewStatus.setObject("Supervisor review required — " + reason);
+            reviewStatus.setObject("Supervisor review required — " + lastReviewReason(trace));
+            statusClass.setObject("bd-status bd-warn");
         } else {
             reviewStatus.setObject("Screening clear — proceed.");
+            statusClass.setObject("bd-status bd-ok");
         }
     }
 
