@@ -1,0 +1,21 @@
+# Build output
+target/
+*.class
+
+# Internal notes — not for distribution.
+_sealed/
+
+# Behavioral traces are regenerated from scenarios + seed; not committed.
+traces/
+
+# Internal verification tests — not for distribution.
+src/test/java/com/meridianbranch/branchdesk/Phase5WorkflowTest.java
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Logs
+*.log
